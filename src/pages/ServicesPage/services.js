@@ -45,12 +45,12 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-100 to-blue-200 text-gray-800 py-20">
+      <section className="bg-gradient-to-r from-accent/50 via-background to-accent/50 text-gray-800 py-20">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-blue-600">Our Services</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Our Services</h1>
             <p className="text-xl text-gray-700">
               Comprehensive real estate development solutions
             </p>
@@ -84,15 +84,15 @@ const Services = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">30+</div>
+              <div className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-2">30+</div>
               <div className="text-gray-700 font-semibold">Years of Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">43+</div>
+              <div className="text-4xl font-bold bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent mb-2">43+</div>
               <div className="text-gray-700 font-semibold">Successful Projects</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">2500+</div>
+              <div className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-2">2500+</div>
               <div className="text-gray-700 font-semibold">Happy Customers</div>
             </div>
           </div>
@@ -100,13 +100,13 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-100 text-gray-800">
+      <section className="py-20 bg-gradient-to-br from-background via-accent to-background text-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4 text-blue-600">Ready to Start Your Project?</h2>
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Ready to Start Your Project?</h2>
           <p className="text-xl mb-8 text-gray-700">
             Contact us today to discuss your real estate needs
           </p>
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+          <button className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-lg font-semibold hover:from-primary hover:to-secondary transition shadow-lg">
             Get in Touch
           </button>
         </div>

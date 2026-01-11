@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,4 +31,46 @@ code {
 
 .animate-fade-in {
   animation: fade-in 1s ease-out;
+}
+
+/* Swiper Custom Styles */
+.project-swiper .swiper-button-next,
+.project-swiper .swiper-button-prev {
+  color: #548CA8;
+  background: rgba(255, 255, 255, 0.95);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: 2px solid #548CA8;
+}
+
+.project-swiper .swiper-button-next:hover,
+.project-swiper .swiper-button-prev:hover {
+  background: linear-gradient(135deg, #548CA8 0%, #96CADC 100%);
+  color: white;
+  transform: scale(1.1);
+  border-color: transparent;
+}
+
+.project-swiper .swiper-button-next::after,
+.project-swiper .swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.project-swiper .swiper-pagination-bullet {
+  background: linear-gradient(135deg, #548CA8 0%, #96CADC 100%);
+  opacity: 0.5;
+  width: 8px;
+  height: 8px;
+  transition: all 0.3s ease;
+}
+
+.project-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 24px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #548CA8 0%, #96CADC 100%);
 }

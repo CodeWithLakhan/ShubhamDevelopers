@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaWhatsapp } from "react-icons/fa";
+import { IoLocationOutline } from "react-icons/io5";
+
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +13,7 @@ const Header = () => {
   };
 
   return (
-<header className="relative sticky top-0 z-50 shadow-lg bg-white/90 backdrop-blur">
+<header className="relative sticky top-0 z-50 shadow-lg bg-background/90 backdrop-blur">
       
       <div className="relative z-10 container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -22,24 +26,41 @@ const Header = () => {
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-black hover:text-blue-300 font-medium transition drop-shadow-md">
+            <Link to="/" className="text-gray-700 hover:text-primary font-medium transition drop-shadow-md">
               Home
             </Link>
-            <Link to="/about" className="text-black hover:text-blue-300 font-medium transition drop-shadow-md">
+            <Link to="/about" className="text-gray-700 hover:text-primary font-medium transition drop-shadow-md">
               About
             </Link>
-            <Link to="/projects" className="text-black hover:text-blue-300 font-medium transition drop-shadow-md">
+            <Link to="/projects" className="text-gray-700 hover:text-primary font-medium transition drop-shadow-md">
               Projects
             </Link>
-            <Link to="/services" className="text-black hover:text-blue-300 font-medium transition drop-shadow-md">
+            <Link to="/services" className="text-gray-700 hover:text-primary font-medium transition drop-shadow-md">
               Services
             </Link>
-            <Link to="/contact" className="text-black hover:text-blue-300 font-medium transition drop-shadow-md">
+            <Link to="/contact" className="text-gray-700 hover:text-primary font-medium transition drop-shadow-md">
               Contact Us
             </Link>
-            <button className="bg-blue-600 text-black px-6 py-2 rounded-lg hover:bg-blue-700 transition shadow-lg">
-              Quick Inquiry
-            </button>
+            <a 
+              href="https://wa.me/919284844534" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-700 hover:text-green-600 transition-colors animate-heartbeat drop-shadow-md"
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp className="text-3xl" />
+            </a>
+            <a 
+              href="https://maps.app.goo.gl/jUoxAuLJKR5HVz4A7" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-700 hover:text-primary transition-colors animate-heartbeat drop-shadow-md"
+              aria-label="Location"
+            >
+              <IoLocationOutline className="text-3xl" />
+            </a>
+
+
           </nav>
 
           <button
@@ -60,22 +81,22 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden py-4 border-t border-white border-opacity-20">
             <div className="flex flex-col space-y-4">
-              <Link to="/" className="text-black hover:text-blue-300 font-medium transition" onClick={toggleMenu}>
+              <Link to="/" className="text-gray-700 hover:text-primary font-medium transition" onClick={toggleMenu}>
                 Home
               </Link>
-              <Link to="/about" className="text-black hover:text-blue-300 font-medium transition" onClick={toggleMenu}>
+              <Link to="/about" className="text-gray-700 hover:text-primary font-medium transition" onClick={toggleMenu}>
                 About
               </Link>
-              <Link to="/projects" className="text-black hover:text-blue-300 font-medium transition" onClick={toggleMenu}>
+              <Link to="/projects" className="text-gray-700 hover:text-primary font-medium transition" onClick={toggleMenu}>
                 Projects
               </Link>
-              <Link to="/services" className="text-black hover:text-blue-300 font-medium transition" onClick={toggleMenu}>
+              <Link to="/services" className="text-gray-700 hover:text-primary font-medium transition" onClick={toggleMenu}>
                 Services
               </Link>
-              <Link to="/contact" className="text-black hover:text-blue-300 font-medium transition" onClick={toggleMenu}>
+              <Link to="/contact" className="text-gray-700 hover:text-primary font-medium transition" onClick={toggleMenu}>
                 Contact Us
               </Link>
-              <button className="bg-blue-600 text-black px-6 py-2 rounded-lg hover:bg-blue-700 transition w-full shadow-lg">
+              <button className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-lg hover:from-primary hover:to-secondary transition w-full shadow-lg">
                 Quick Inquiry
               </button>
             </div>

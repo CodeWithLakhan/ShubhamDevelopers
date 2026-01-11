@@ -1,12 +1,8 @@
 import React from 'react';
+import JourneySection from '../../components/JourneySection';
 
 const About = () => {
-  const milestones = [
-    { year: '1991', title: 'Company Founded', description: 'Started as a small company with a vision to create themed landscaping' },
-    { year: '2000s', title: 'Expansion Phase', description: 'Expanded operations to multiple cities including Ahmedabad, Vapi & Umbergaon' },
-    { year: '2010s', title: 'Growth & Recognition', description: 'Became one of Gujarat\'s greatest emerging real estate developers' },
-    { year: 'Present', title: 'Industry Leader', description: '43+ projects, 2500+ happy customers, 3300+ total units' }
-  ];
+  /* Milestones array replaced by JourneySection */
 
   const achievements = [
     'Gujarat\'s one of the greatest emerging real estate developers',
@@ -17,13 +13,13 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-100 to-blue-200 text-gray-800 py-20">
+      <section className="bg-gradient-to-r from-accent/50 via-background to-accent/50 text-gray-800 py-20">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <span className="text-blue-600 font-semibold">About Us</span>
-            <h1 className="text-5xl md:text-6xl font-bold mt-4 mb-6 text-blue-600">
+            <span className="text-primary font-semibold">About Us</span>
+            <h1 className="text-5xl md:text-6xl font-bold mt-4 mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               SINCE 1991
             </h1>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -62,27 +58,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Milestones */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center">Milestones</h2>
-          <div className="max-w-5xl mx-auto">
-            <div className="space-y-8">
-              {milestones.map((milestone, index) => (
-                <div key={index} className="flex flex-col md:flex-row gap-6">
-                  <div className="md:w-1/4">
-                    <div className="text-3xl font-bold text-blue-600">{milestone.year}</div>
-                  </div>
-                  <div className="md:w-3/4">
-                    <h3 className="text-2xl font-semibold mb-2">{milestone.title}</h3>
-                    <p className="text-gray-700">{milestone.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Journey Section */}
+      <JourneySection />
 
       {/* Achievements */}
       <section className="py-20">
@@ -91,7 +68,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {achievements.map((achievement, index) => (
-                <div key={index} className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
+                <div key={index} className={`p-6 rounded-lg border-l-4 ${index % 2 === 0 ? 'bg-accent/50 border-primary' : 'bg-background border-secondary'}`}>
                   <p className="text-gray-700">{achievement}</p>
                 </div>
               ))}
@@ -101,23 +78,23 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-blue-50 text-gray-800">
+      <section className="py-20 bg-gradient-to-br from-background via-accent to-background text-gray-800">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-5xl font-bold mb-2 text-blue-600">43+</div>
+              <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">43+</div>
               <div className="text-gray-600">Total Projects</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold mb-2 text-blue-600">2500+</div>
+              <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">2500+</div>
               <div className="text-gray-600">Happy Customers</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold mb-2 text-blue-600">3300+</div>
+              <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">3300+</div>
               <div className="text-gray-600">Total Units</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold mb-2 text-blue-600">35Lakhs+</div>
+              <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">35Lakhs+</div>
               <div className="text-gray-600">Construction Area (lakhs Sq.ft.)</div>
             </div>
           </div>

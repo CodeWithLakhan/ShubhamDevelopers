@@ -1,5 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { FaBuilding, FaSmile, FaHome, FaRulerCombined } from "react-icons/fa";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import MapSection from '../../components/MapSection';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 // Counter Component
 const Counter = ({ target, suffix = '', duration = 2000 }) => {
@@ -64,43 +71,82 @@ const Counter = ({ target, suffix = '', duration = 2000 }) => {
   );
 };
 
+
 const Home = () => {
   const ongoingProjects = [
     {
       id: 1,
-      name: 'Shubham Evergreen',
-      location: 'Vapi',
-      description: '3BHK and 4BHK Luxurious Flats & Showroom at Vapi',
-      image: '/images/coverImage.png'
+      name: 'Vrindavan Heights',
+      location: 'Mandal',
+      description: '2BHK and 1 BHK Flats',
+      images: [
+        '/images/vrindawanHeightsv1.jpeg',
+        '/images/vrindawanHeightsv1.jpeg', // Add more images here
+      ],
+      brochure: '/brochures/vrindavan-heights.pdf', 
+      mapLink: '' 
     },
     {
       id: 2,
-      name: 'Shubham Anthem',
-      location: 'Shela',
-      description: '3 & 4 BHK Precious Living & Shops at Shela',
-      image: '/images/coverImage.png'
+      name: 'Shubham Row House',
+      location: 'NavjeevanPark, Near SPDM College',
+      description: '2BHK Row Houses ',
+      images: [
+        '/images/ShubhamRowHouseV1.jpg',
+        '/images/ShubhamRowHouseV1.jpg', // Add more images here
+      ],
+      brochure: '', 
+      mapLink: '' 
     },
     {
       id: 3,
-      name: 'Aastha Elegance',
-      location: 'Dholka',
-      description: '3 & 4 BHK Magnificient Villa at Dholka',
-      image: '/images/coverImage.png'
+      name: 'Bunglow (Sold)',
+      location: 'Mahaveer Lawns, Mandal Shivar',
+      description: '',
+      images: [
+        '/images/BunglowSoldv1.jpeg',
+        '/images/BunglowSoldv1.jpeg', // Add more images here
+      ],
+      brochure: '', 
+      mapLink: '' 
     },
-    {
-      id: 4,
-      name: 'Shubham Pleasure',
-      location: 'Sanand',
-      description: '2 & 3 Bhk Living Homes, at Sanand',
-      image: '/images/coverImage.png'
-    }
+    
   ];
 
+  /* Stats Restored */
   const stats = [
-    { number: 43, suffix: '+', label: 'Total Projects' },
-    { number: 2500 , suffix: '+', label: 'Happy Customers' },
-    { number: 3300, suffix: '+', label: 'Total Units' },
-    { number: 35, suffix: 'Lakhs+', label: 'Construction Area (lakhs Sq.ft.)' }
+    { 
+      number: 43, 
+      suffix: '+', 
+      label: 'Years of Experience',
+      icon: <FaBuilding className="text-white text-3xl" />,
+      gradient: 'from-primary to-secondary',
+      bgGradient: 'from-primary to-secondary'
+    },
+    { 
+      number: 2500, 
+      suffix: '+', 
+      label: 'Happy Customers',
+      icon: <FaSmile className="text-white text-3xl" />,
+      gradient: 'from-secondary to-accent',
+      bgGradient: 'from-secondary to-accent'
+    },
+    { 
+      number: 3300, 
+      suffix: '+', 
+      label: 'Total Units',
+      icon: <FaHome className="text-white text-3xl" />,
+      gradient: 'from-primary to-secondary',
+      bgGradient: 'from-primary to-secondary'
+    },
+    { 
+      number: 35, 
+      suffix: 'Lakhs+', 
+      label: 'Construction Area (Sq.ft.)',
+      icon: <FaRulerCombined className="text-white text-3xl" />,
+      gradient: 'from-secondary to-accent',
+      bgGradient: 'from-secondary to-accent'
+    }
   ];
 
   return (
@@ -119,20 +165,20 @@ const Home = () => {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-2xl animate-fade-in">
+            <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 text-white drop-shadow-2xl animate-fade-in tracking-tight">
               Shubham Developers
             </h1>
-            <p className="text-xl md:text-3xl mb-6 text-white font-medium drop-shadow-lg">
+            <p className="text-xl md:text-3xl mb-6 text-white font-body font-light drop-shadow-lg">
               Turning Blueprints into Reality.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 to="/projects" 
-                className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl transform"
+                className="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-opacity-90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl transform"
               >
                 View Projects
               </Link>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl transform">
+              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl transform">
                 Quick Inquiry
               </button>
             </div>
@@ -148,17 +194,44 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-800 mb-2">Our Achievements</h2>
+            <p className="text-gray-600 font-body">Building dreams</p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
+              <div 
+                key={index} 
+                className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-6 md:p-8 border border-accent"
+              >
+                {/* Icon */}
+                <div className="flex justify-center mb-4">
+                  <div className={`w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br ${stat.bgGradient} rounded-full flex items-center justify-center text-3xl md:text-4xl group-hover:scale-110 transition-transform duration-300 shadow-md`}>
+                    {stat.icon}
+                  </div>
+                </div>
+                
+                {/* Number */}
+                <div className={`text-4xl md:text-5xl lg:text-6xl font-heading font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-3`}>
                   <Counter target={stat.number} suffix={stat.suffix} duration={2000} />
                 </div>
-                <div className="text-gray-600 font-medium">
+                
+                {/* Label */}
+                <div className="text-gray-700 font-semibold text-sm md:text-base">
                   {stat.label}
                 </div>
+                
+                {/* Decorative Bottom Border */}
+                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${stat.gradient} rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
               </div>
             ))}
           </div>
@@ -169,8 +242,8 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <span className="text-blue-600 font-semibold">About</span>
-            <h2 className="text-4xl font-bold mt-2 mb-4">SINCE 1991</h2>
+            <span className="text-primary font-semibold font-body tracking-wider uppercase text-sm">About</span>
+            <h2 className="text-4xl font-heading font-bold mt-2 mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">SINCE 1991</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Gujarat's one of the greatest emerging real estate developers
             </p>
@@ -185,7 +258,7 @@ const Home = () => {
             </p>
             <Link 
               to="/about" 
-              className="inline-block text-blue-600 font-semibold hover:text-blue-700 transition"
+              className="inline-block text-primary font-semibold hover:text-secondary transition"
             >
               Read More →
             </Link>
@@ -197,49 +270,92 @@ const Home = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <span className="text-blue-600 font-semibold">Real Estate Developers</span>
-            <h2 className="text-4xl font-bold mt-2 mb-4">Ongoing Projects</h2>
+            <span className="text-primary font-semibold font-body tracking-wider uppercase text-sm">Real Estate Developers</span>
+            <h2 className="text-4xl font-heading font-bold mt-2 mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Ongoing Projects</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {ongoingProjects.map((project) => (
-              <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
-                <div className="h-48 bg-gray-200 overflow-hidden relative">
-                  <img 
-                    src={project.image} 
-                    alt={project.name}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors">{project.name}</h3>
-                  <p className="text-gray-600 text-sm mb-2">{project.location}</p>
-                  <p className="text-gray-700 mb-4">{project.description}</p>
-                  <Link 
-                    to="/projects" 
-                    className="text-blue-600 font-semibold hover:text-blue-700 transition inline-flex items-center group-hover:gap-2 gap-1"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {ongoingProjects.slice(0, 3).map((project) => (
+              <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group flex flex-col">
+                <div className="h-64 bg-gray-100 overflow-hidden relative">
+                  <Swiper
+                    modules={[Navigation, Pagination, Autoplay]}
+                    spaceBetween={0}
+                    slidesPerView={1}
+                    navigation={true}
+                    pagination={{ clickable: true }}
+                    autoplay={{
+                      delay: 3000,
+                      disableOnInteraction: false,
+                    }}
+                    loop={project.images.length > 1}
+                    className="project-swiper h-full"
                   >
-                    Learn More 
-                    <span className="transition-transform group-hover:translate-x-1">→</span>
-                  </Link>
+                    {project.images.map((image, imgIndex) => (
+                      <SwiperSlide key={imgIndex}>
+                        <div className="h-64 flex items-center justify-center bg-gray-100">
+                          <img 
+                            src={image} 
+                            alt={`${project.name} - Image ${imgIndex + 1}`}
+                            className="w-full h-full object-contain p-2"
+                          />
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 pointer-events-none z-10"></div>
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.name}</h3>
+                  <p className="text-gray-600 text-sm mb-2">{project.location}</p>
+                  {project.description && (
+                    <p className="text-gray-700 mb-4 flex-grow">{project.description}</p>
+                  )}
+                  <div className="flex flex-col sm:flex-row gap-3 mt-auto">
+                    <a
+                      href={project.brochure}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-semibold hover:from-primary hover:to-secondary transition-all duration-300 text-center text-sm flex items-center justify-center gap-2 shadow-md"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                      Brochure
+                    </a>
+                    <a
+                      href={project.mapLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-white border-2 border-primary text-primary px-4 py-2 rounded-lg font-semibold hover:bg-accent transition-all duration-300 text-center text-sm flex items-center justify-center gap-2"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      View Map
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
+          <div className="text-center">
+            <Link 
+              to="/projects"
+              className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              See More Projects
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-blue-100 text-gray-800">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4 text-blue-600">Upcoming Project</h2>
-          <p className="text-xl mb-2 text-gray-700">2 & 3 BHK Lifestyle Apartments & Retail Spaces</p>
-          <p className="text-lg mb-8 text-gray-600">At Sanand</p>
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-            Submit Inquiry
-          </button>
-        </div>
-      </section>
+      {/* Map Section */}
+      {/* <MapSection />/ */}
+
     </div>
   );
 };

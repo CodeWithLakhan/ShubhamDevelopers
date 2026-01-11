@@ -74,12 +74,12 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-100 to-blue-200 text-gray-800 py-20">
+      <section className="bg-gradient-to-r from-accent/50 via-background to-accent/50 text-gray-800 py-20">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-blue-600">Our Projects</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Our Projects</h1>
             <p className="text-xl text-gray-700">
               Signature projects in Ahmedabad, Vapi & Umbergaon
             </p>
@@ -95,7 +95,7 @@ const Projects = () => {
               onClick={() => setActiveTab('ongoing')}
               className={`px-6 py-3 rounded-lg font-semibold transition ${
                 activeTab === 'ongoing'
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-gradient-to-r from-primary to-secondary text-white'
                   : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >
@@ -104,8 +104,8 @@ const Projects = () => {
             <button
               onClick={() => setActiveTab('upcoming')}
               className={`px-6 py-3 rounded-lg font-semibold transition ${
-                activeTab === 'upcoming'
-                  ? 'bg-blue-600 text-white'
+                  activeTab === 'upcoming'
+                  ? 'bg-gradient-to-r from-primary to-secondary text-white'
                   : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >
@@ -114,8 +114,8 @@ const Projects = () => {
             <button
               onClick={() => setActiveTab('completed')}
               className={`px-6 py-3 rounded-lg font-semibold transition ${
-                activeTab === 'completed'
-                  ? 'bg-blue-600 text-white'
+                  activeTab === 'completed'
+                  ? 'bg-gradient-to-r from-primary to-secondary text-white'
                   : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >
@@ -140,7 +140,7 @@ const Projects = () => {
                 </div>
                 <div className="p-6">
                   <div className="mb-2">
-                    <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                    <span className="text-xs font-semibold text-primary bg-accent/20 px-2 py-1 rounded">
                       {project.type}
                     </span>
                   </div>
@@ -153,7 +153,7 @@ const Projects = () => {
                     {project.location}
                   </p>
                   <p className="text-gray-700 mb-4">{project.description}</p>
-                  <button className="w-full bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                  <button className="w-full bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-lg hover:from-primary hover:to-secondary transition shadow-md">
                     View Details
                   </button>
                 </div>
