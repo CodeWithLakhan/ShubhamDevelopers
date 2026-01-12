@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { FaBuilding, FaSmile, FaHome, FaRulerCombined } from "react-icons/fa";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import MapSection from '../../components/MapSection';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -81,7 +80,7 @@ const Home = () => {
       description: '2BHK and 1 BHK Flats',
       images: [
         '/images/vrindawanHeightsv1.jpeg',
-        '/images/vrindawanHeightsv1.jpeg', // Add more images here
+        '/images/vrindawanHeightsv2.jpg', // Add more images here
       ],
       brochure: '/brochures/vrindavan-heights.pdf', 
       mapLink: '' 
@@ -93,7 +92,7 @@ const Home = () => {
       description: '2BHK Row Houses ',
       images: [
         '/images/ShubhamRowHouseV1.jpg',
-        '/images/ShubhamRowHouseV1.jpg', // Add more images here
+        '/images/ShubhamRowHouseV2.jpg', // Add more images here
       ],
       brochure: '', 
       mapLink: '' 
@@ -105,7 +104,7 @@ const Home = () => {
       description: '',
       images: [
         '/images/BunglowSoldv1.jpeg',
-        '/images/BunglowSoldv1.jpeg', // Add more images here
+        '/images/BunglowSoldv2.jpeg', // Add more images here
       ],
       brochure: '', 
       mapLink: '' 

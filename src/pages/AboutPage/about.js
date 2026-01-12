@@ -2,15 +2,7 @@ import React from 'react';
 import JourneySection from '../../components/JourneySection';
 
 const About = () => {
-  /* Milestones array replaced by JourneySection */
-
-  const achievements = [
-    'Gujarat\'s one of the greatest emerging real estate developers',
-    'Signature projects in Ahmedabad, Vapi & Umbergaon',
-    'Highly skilled technical planning and themed landscaping',
-    'Transformed from a small company to a whole concept company',
-    'Engineers ideas into reality with quality construction'
-  ];
+  
 
   return (
     <div className="min-h-screen bg-background">
@@ -61,21 +53,7 @@ const About = () => {
       {/* Journey Section */}
       <JourneySection />
 
-      {/* Achievements */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center">Achievements</h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {achievements.map((achievement, index) => (
-                <div key={index} className={`p-6 rounded-lg border-l-4 ${index % 2 === 0 ? 'bg-accent/50 border-primary' : 'bg-background border-secondary'}`}>
-                  <p className="text-gray-700">{achievement}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Stats Section */}
       <section className="py-20 bg-gradient-to-br from-background via-accent to-background text-gray-800">

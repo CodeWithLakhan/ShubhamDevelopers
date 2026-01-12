@@ -2,33 +2,33 @@ import React, { useEffect, useState, useRef } from 'react';
 
 const milestones = [
   {
-    year: '1991',
-    title: 'Foundation',
-    description: 'Started with a vision to redefine real estate.',
+    year: '2022',
+    title: 'Indramangal Apartment',
+    description: 'Started in 2022 with Indaramangal Apartment.',
     icon: '🏗️' 
   },
   {
-    year: '1996',
-    title: 'First Landmark',
-    description: 'Completed our first major residential complex.',
+    year: '2023',
+    title: 'Expansion',
+    description: ' Indramangal Row Houses and Vrindavan Hights.',
     icon: '🏢'
   },
   {
-    year: '2011',
-    title: '50+ Projects',
-    description: 'Reached a significant milestone of 50 completed projects.',
+    year: '2024',
+    title: '10+ Banglows.',
+    description: '10+ Banglows.',
     icon: '🏆'
   },
   {
-    year: '2017',
-    title: '100+ Projects',
-    description: 'Expanded operations across the district.',
+    year: '2025',
+    title: '30+ Projects',
+    description: 'Started consulting for more then 30 projects.',
     icon: '🌍'
   },
   {
-    year: '2024',
-    title: 'Modern Era',
-    description: 'Integrating smart technology into sustainable living.',
+    year: '2026',
+    title: 'Multiple Row Houses',
+    description: 'Lunches multiple Row Houses schemes at multiplelocations.',
     icon: '🚀'
   }
 ];
