@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -13,7 +13,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // Determine if this is the initial load or a route change
     setLoading(true);
     
