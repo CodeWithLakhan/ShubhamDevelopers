@@ -151,7 +151,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[40vh] min-h-[300px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 hover:scale-105"
@@ -164,20 +164,20 @@ const Home = () => {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 text-white drop-shadow-2xl animate-fade-in tracking-tight">
+            <h1 className="text-3xl md:text-7xl font-heading font-bold mb-3 md:mb-6 text-white drop-shadow-2xl animate-fade-in tracking-tight">
               Shubham Developers
             </h1>
-            <p className="text-xl md:text-3xl mb-6 text-white font-body font-light drop-shadow-lg">
+            <p className="text-base md:text-3xl mb-4 md:mb-6 text-white font-body font-light drop-shadow-lg">
               Turning Blueprints into Reality.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-row gap-3 justify-center">
               <Link 
                 to="/projects" 
-                className="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-opacity-90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl transform"
+                className="bg-primary text-white px-4 py-2 md:px-8 md:py-4 text-xs md:text-base rounded-lg font-semibold hover:bg-opacity-90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl transform"
               >
                 View Projects
               </Link>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl transform">
+              <button className="border-2 border-white text-white px-4 py-2 md:px-8 md:py-4 text-xs md:text-base rounded-lg font-semibold hover:bg-white hover:text-primary hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl transform">
                 Quick Inquiry
               </button>
             </div>
@@ -238,7 +238,7 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <span className="text-primary font-semibold font-body tracking-wider uppercase text-sm">About</span>
@@ -263,7 +263,7 @@ const Home = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Ongoing Projects Section */}
       <section className="py-20 bg-gray-50">
@@ -352,8 +352,61 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Map Section */}
-      {/* <MapSection />/ */}
+      {/* Owner Profile Section */}
+      <section className="py-24 bg-gradient-to-br from-white to-accent/20 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+            {/* Image Side */}
+            <div className="w-full md:w-1/2 flex justify-center ">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-primary/20 rounded-t-[10rem] rounded-b-3xl transform rotate-6 group-hover:rotate-12 transition-transform duration-500 blur-xl"></div>
+                <div className="relative overflow-hidden rounded-t-[10rem] rounded-b-3xl border-8 border-white shadow-2xl w-80 h-[30rem] md:w-96 md:h-[32rem]">
+                  <img 
+                    src="/images/BhaveshAgrawal.jpeg" 
+                    alt="Er. Bhavesh Agrawal" 
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                  />
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+                  
+                  {/* Name Tag on Image */}
+                  <div className="absolute bottom-6 left-6 text-white text-left">
+                    <p className="font-heading font-bold text-2xl tracking-wide">Er. Bhavesh Agrawal</p>
+                    <p className="font-body text-sm font-light opacity-90 uppercase tracking-widest">Founder & Civil Engineer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Content Side */}
+            <div className="w-full md:w-1/2 text-center md:text-left">
+              <span className="text-primary font-semibold font-body tracking-wider uppercase text-sm mb-2 block animate-fade-in-up">The Man Behind the Vision</span>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-gray-800 leading-tight">
+                Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Dreams</span><br />
+                Into Reality
+              </h2>
+              
+              <div className="space-y-6 text-gray-600 font-body text-lg leading-relaxed relative">
+                <p>
+                  <span className="text-6xl absolute -top-8 -left-4 text-primary/10 font-serif">"</span>
+                   With a profound vision for transforming Shirpur's skyline, <strong>Er. Bhavesh Agrawal</strong> combines technical expertise with creative brilliance.
+                </p>
+                <p>
+                  As the driving force behind Shubham Developers, his commitment to quality construction and innovative design has redefined modern living in the district.
+                  A Civil Engineer by profession and a builder by passion, he ensures every project stands as a testament to trust and excellence.
+                </p>
+              </div>
+
+              {/* Signature/CTA */}
+              <div className="mt-10 flex flex-col items-center md:items-start gap-4">
+                <div className="h-1 w-20 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                <p className="text-gray-500 text-sm italic">"Building not just homes, but legacies."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
     </div>
   );
