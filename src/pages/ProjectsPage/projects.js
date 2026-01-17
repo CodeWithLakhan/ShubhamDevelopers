@@ -12,7 +12,7 @@ const Projects = () => {
     {
       id: 1,
       name: 'Vrindavan Heights',
-      location: 'Mandal',
+      location: 'Near Mandal gate, Mandal Shivar, Shirpur',
       description: '2BHK and 1 BHK Flats. A perfect blend of comfort and affordability.',
       type: 'Residential',
       status: 'ongoing',
@@ -35,7 +35,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      name: 'Luxurious Bunglows',
+      name: '4BHK Luxurious Bunglow',
       location: 'Mahaveer Lawns, Mandal Shivar',
       description: 'Premium standalone bunglows offering privacy and grandeur. (Sold Out)',
       type: 'Villas',
@@ -48,14 +48,38 @@ const Projects = () => {
     {
       id: 4,
       name: 'Indramangal Apartment',
-      location: 'City Center',
-      description: 'Classic residential complex defining standard urban living.',
+      location: 'Mahaveer Vihar, Near City pride Mall, Mandal Shivar, Shirpur',
+      description: 'Classic residential 2BHK Flats defining standard urban living.',
       type: 'Residential',
       status: 'completed',
       images: [
         '/images/IndramangalApartment.jpeg'
       ]
-    }
+    },
+    {
+      id: 5,
+      name: 'Shubham Residency',
+      location: 'Vasant anna nagar, Karvand road, Mandal Shivar, Shirpur',
+      description: 'Premium standalone 2BHK Row Houses.',
+      type: 'Residential',
+      status: 'completed',
+      images: [
+        '/images/ShubhamResidencyView1.jpg',
+        '/images/ShubhamResidencyView2.jpg'
+      ]
+    },
+    {
+      id: 6,
+      name: 'Shivtara Residency',
+      location: 'Mahaveer Vihar, Near City pride mall, Mandal Shivar, Shirpur',
+      description: '2BHK Luxurious Row Houses. ',
+      type: 'Residential',
+      status: 'completed',
+      images: [
+        '/images/ShivtaraV1.jpg',
+        '/images/ShivtaraV2.jpg'
+      ]
+    },
   ];
 
   const filteredProjects = activeTab === 'all' 
