@@ -14,6 +14,34 @@ const Counter = ({ target, suffix = '', duration = 2000 }) => {
   const counterRef = useRef(null);
 
   useEffect(() => {
+    const node = counterRef.current;
+    
+    const animateCounter = () => {
+      const startTime = Date.now();
+      const startValue = 0;
+      const endValue = target;
+  
+      const animate = () => {
+        const now = Date.now();
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+  
+        // Easing function for smooth animation
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        const currentValue = Math.floor(startValue + (endValue - startValue) * easeOutQuart);
+  
+        setCount(currentValue);
+  
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          setCount(endValue);
+        }
+      };
+  
+      requestAnimationFrame(animate);
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -26,42 +54,16 @@ const Counter = ({ target, suffix = '', duration = 2000 }) => {
       { threshold: 0.5 }
     );
 
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
+    if (node) {
+      observer.observe(node);
     }
 
     return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current);
+      if (node) {
+        observer.unobserve(node);
       }
     };
-  }, [hasAnimated]);
-
-  const animateCounter = () => {
-    const startTime = Date.now();
-    const startValue = 0;
-    const endValue = target;
-
-    const animate = () => {
-      const now = Date.now();
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-
-      // Easing function for smooth animation
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      const currentValue = Math.floor(startValue + (endValue - startValue) * easeOutQuart);
-
-      setCount(currentValue);
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        setCount(endValue);
-      }
-    };
-
-    requestAnimationFrame(animate);
-  };
+  }, [hasAnimated, target, duration]);
 
   return (
     <span ref={counterRef}>
@@ -294,7 +296,7 @@ const Home = () => {
                         <div className="h-64 flex items-center justify-center bg-gray-100">
                           <img 
                             src={image} 
-                            alt={`${project.name} - Image ${imgIndex + 1}`}
+                            alt={`${project.name} ${imgIndex + 1}`}
                             className="w-full h-full object-contain p-2"
                           />
                         </div>
