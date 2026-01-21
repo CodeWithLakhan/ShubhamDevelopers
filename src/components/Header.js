@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 
 
@@ -49,6 +49,15 @@ const Header = () => {
               aria-label="WhatsApp"
             >
               <FaWhatsapp className="text-3xl" />
+            </a>
+            <a 
+              href="https://www.instagram.com/my1st_residence?igsh=MTdxbm42OHp3MTNpaQ%3D%3D" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-700 hover:text-pink-600 transition-colors animate-heartbeat drop-shadow-md"
+              aria-label="Instagram"
+            >
+              <FaInstagram className="text-3xl" />
             </a>
             <a 
               href="https://maps.app.goo.gl/jUoxAuLJKR5HVz4A7" 

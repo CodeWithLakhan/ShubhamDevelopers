@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBuilding, FaSmile, FaHome, FaRulerCombined } from "react-icons/fa";
+import { FaBuilding, FaSmile, FaHome, FaRulerCombined, FaInstagram } from "react-icons/fa";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -116,16 +116,16 @@ const Home = () => {
 
   /* Stats Restored */
   const stats = [
+    // { 
+    //   number: 43, 
+    //   suffix: '+', 
+    //   label: 'Years of Experience',
+    //   icon: <FaBuilding className="text-white text-3xl" />,
+    //   gradient: 'from-primary to-secondary',
+    //   bgGradient: 'from-primary to-secondary'
+    // },
     { 
-      number: 43, 
-      suffix: '+', 
-      label: 'Years of Experience',
-      icon: <FaBuilding className="text-white text-3xl" />,
-      gradient: 'from-primary to-secondary',
-      bgGradient: 'from-primary to-secondary'
-    },
-    { 
-      number: 2500, 
+      number: 50, 
       suffix: '+', 
       label: 'Happy Customers',
       icon: <FaSmile className="text-white text-3xl" />,
@@ -133,7 +133,7 @@ const Home = () => {
       bgGradient: 'from-secondary to-accent'
     },
     { 
-      number: 3300, 
+      number: 50, 
       suffix: '+', 
       label: 'Total Units',
       icon: <FaHome className="text-white text-3xl" />,
@@ -141,7 +141,7 @@ const Home = () => {
       bgGradient: 'from-primary to-secondary'
     },
     { 
-      number: 35, 
+      number: 2, 
       suffix: 'Lakhs+', 
       label: 'Construction Area (Sq.ft.)',
       icon: <FaRulerCombined className="text-white text-3xl" />,
@@ -183,6 +183,16 @@ const Home = () => {
                 Quick Inquiry
               </button>
             </div>
+            
+            <a 
+              href="https://www.instagram.com/my1st_residence?igsh=MTdxbm42OHp3MTNpaQ%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-8 text-white/80 hover:text-white hover:scale-105 transition-all duration-300 backdrop-blur-sm bg-white/10 px-4 py-2 rounded-full"
+            >
+              <FaInstagram className="text-xl" />
+              <span className="font-medium text-sm">Follow us on Instagram</span>
+            </a>
           </div>
         </div>
         
@@ -208,7 +218,7 @@ const Home = () => {
             <p className="text-gray-600 font-body">Building dreams</p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 justify-center">
             {stats.map((stat, index) => (
               <div 
                 key={index} 
@@ -365,7 +375,7 @@ const Home = () => {
                 <div className="relative overflow-hidden rounded-t-[10rem] rounded-b-3xl border-8 border-white shadow-2xl w-80 h-[30rem] md:w-96 md:h-[32rem]">
                   <img 
                     src="/images/BhaveshAgrawal.jpeg" 
-                    alt="Er. Bhavesh Agrawal" 
+                    alt="Mr. Bhavesh Agrawal" 
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />
                   {/* Overlay Gradient */}
@@ -373,8 +383,8 @@ const Home = () => {
                   
                   {/* Name Tag on Image */}
                   <div className="absolute bottom-6 left-6 text-white text-left">
-                    <p className="font-heading font-bold text-2xl tracking-wide">Er. Bhavesh Agrawal</p>
-                    <p className="font-body text-sm font-light opacity-90 uppercase tracking-widest">Founder & Civil Engineer</p>
+                    <p className="font-heading font-bold text-2xl tracking-wide">Mr. Bhavesh Agrawal</p>
+                    <p className="font-body text-sm font-light opacity-90 uppercase tracking-widest">Founder</p>
                   </div>
                 </div>
               </div>
@@ -384,18 +394,18 @@ const Home = () => {
             <div className="w-full md:w-1/2 text-center md:text-left">
               <span className="text-primary font-semibold font-body tracking-wider uppercase text-sm mb-2 block animate-fade-in-up">The Man Behind the Vision</span>
               <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-gray-800 leading-tight">
-                Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Dreams</span><br />
+                Turning <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Dreams</span><br />
                 Into Reality
               </h2>
               
               <div className="space-y-6 text-gray-600 font-body text-lg leading-relaxed relative">
                 <p>
                   <span className="text-6xl absolute -top-8 -left-4 text-primary/10 font-serif">"</span>
-                   With a profound vision for transforming Shirpur's skyline, <strong>Er. Bhavesh Agrawal</strong> combines technical expertise with creative brilliance.
+                   With a profound vision for transforming Shirpur's skyline, <strong>Mr. Bhavesh Shubhashchandra Agrawal</strong> combines deep industry knowledge with creative brilliance.
                 </p>
                 <p>
                   As the driving force behind Shubham Developers, his commitment to quality construction and innovative design has redefined modern living in the district.
-                  A Civil Engineer by profession and a builder by passion, he ensures every project stands as a testament to trust and excellence.
+                  A visionary leader by profession and a builder by passion, he ensures every project stands as a testament to trust and excellence.
                 </p>
               </div>
 

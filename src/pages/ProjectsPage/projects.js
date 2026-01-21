@@ -14,8 +14,8 @@ const Projects = () => {
       name: 'Vrindavan Heights',
       location: 'Near Mandal gate, Mandal Shivar, Shirpur',
       description: '2BHK and 1 BHK Flats. A perfect blend of comfort and affordability.',
-      type: 'Residential',
-      status: 'ongoing',
+      tags: ['Residential', 'Flats', 'Budget Homes'],
+      status: ['completed' , 'ready possession'],
       images: [
         '/images/vrindawanHeightsv1.jpeg',
         '/images/vrindawanHeightsv2.jpg'
@@ -26,8 +26,8 @@ const Projects = () => {
       name: 'Shubham Row House',
       location: 'Navjeevan Park, Near SPDM College',
       description: '2BHK Luxurious Row Houses designed for modern families.',
-      type: 'Residential',
-      status: 'ongoing',
+      tags: ['Residential', 'Row House', 'Modern Living'],
+      status: ['ongoing', 'booking open'],
       images: [
          '/images/ShubhamRowHouseV1.jpg',
          '/images/ShubhamRowHouseV2.jpg'
@@ -38,8 +38,8 @@ const Projects = () => {
       name: '4BHK Luxurious Bunglow',
       location: 'Mahaveer Lawns, Mandal Shivar',
       description: 'Premium standalone bunglows offering privacy and grandeur. (Sold Out)',
-      type: 'Villas',
-      status: 'completed',
+      tags: ['Residential', 'Bunglow', 'Luxury'],
+      status: ['completed', 'sold out'],
       images: [
         '/images/BunglowSoldv1.jpeg',
         '/images/BunglowSoldv2.jpeg'
@@ -50,8 +50,8 @@ const Projects = () => {
       name: 'Indramangal Apartment',
       location: 'Mahaveer Vihar, Near City pride Mall, Mandal Shivar, Shirpur',
       description: 'Classic residential 2BHK Flats defining standard urban living.',
-      type: 'Residential',
-      status: 'completed',
+      tags: ['Residential', 'Apartment', 'City Center'],
+      status: ['completed'],
       images: [
         '/images/IndramangalApartment.jpeg'
       ]
@@ -61,8 +61,8 @@ const Projects = () => {
       name: 'Shubham Residency',
       location: 'Vasant anna nagar, Karvand road, Mandal Shivar, Shirpur',
       description: 'Premium standalone 2BHK Row Houses.',
-      type: 'Residential',
-      status: 'completed',
+      tags: ['Residential', 'Row House', 'Premium'],
+      status: ['ongoing'],
       images: [
         '/images/ShubhamResidencyView1.jpg',
         '/images/ShubhamResidencyView2.jpg'
@@ -73,8 +73,8 @@ const Projects = () => {
       name: 'Shivtara Residency',
       location: 'Mahaveer Vihar, Near City pride mall, Mandal Shivar, Shirpur',
       description: '2BHK Luxurious Row Houses. ',
-      type: 'Residential',
-      status: 'completed',
+      tags: ['Residential', 'Row House', 'Luxury'],
+      status: ['ongoing'],
       images: [
         '/images/ShivtaraV1.jpg',
         '/images/ShivtaraV2.jpg'
@@ -84,7 +84,7 @@ const Projects = () => {
 
   const filteredProjects = activeTab === 'all' 
     ? projects 
-    : projects.filter(project => project.status === activeTab);
+    : projects.filter(project => project.status.includes(activeTab));
 
   return (
     <div className="min-h-screen bg-white">
@@ -164,18 +164,31 @@ const Projects = () => {
                     </div>
                   )}
                   
-                  {/* Status Badge */}
-                  <div className={`absolute top-4 right-4 z-10 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white shadow-lg ${
-                    project.status === 'ongoing' ? 'bg-green-500' : 'bg-blue-500'
-                  }`}>
-                    {project.status}
+                  {/* Status Badges */}
+                  <div className="absolute top-4 right-4 z-10 flex flex-col gap-2 items-end">
+                    {project.status.map((status, idx) => (
+                      <div key={idx} className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white shadow-lg ${
+                        status === 'ongoing' ? 'bg-green-500' : 
+                        status === 'completed' ? 'bg-blue-500' :
+                        status === 'booking open' ? 'bg-yellow-500' :
+                        'bg-red-500'
+                      }`}>
+                        {status}
+                      </div>
+                    ))}
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-8 flex flex-col flex-grow relative">
-                   {/* Type Tag */}
-                  <span className="text-secondary text-xs font-bold tracking-widest uppercase mb-2 block">{project.type}</span>
+                   {/* Tags */}
+                   <div className="flex flex-wrap gap-2 mb-3">
+                     {project.tags.map((tag, i) => (
+                       <span key={i} className="text-secondary text-[10px] font-bold tracking-widest uppercase bg-secondary/10 px-2 py-1 rounded-md">
+                         {tag}
+                       </span>
+                     ))}
+                   </div>
                   
                   <h3 className="text-2xl font-heading font-bold text-gray-800 mb-2 group-hover:text-primary transition-colors">
                     {project.name}
