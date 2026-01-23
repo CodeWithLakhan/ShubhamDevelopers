@@ -5,13 +5,13 @@ const About = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-24 bg-primary/5 overflow-hidden">
+      <section className="relative py-16 md:py-24 bg-primary/5 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
            <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/30 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
            <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/30 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-heading font-bold text-gray-800 mb-6">
+          <h1 className="text-4xl md:text-7xl font-heading font-bold text-gray-800 mb-6">
             Building <span className="text-primary">Legacies</span>
           </h1>
           <p className="text-xl text-gray-600 font-body max-w-2xl mx-auto leading-relaxed">
@@ -22,14 +22,14 @@ const About = () => {
       </section>
 
       {/* Owner Profile Section */}
-      <section className="py-24 bg-white overflow-hidden">
+      <section className="py-16 md:py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
             {/* Image Side */}
             <div className="w-full md:w-1/2 flex justify-center">
               <div className="relative group">
                 <div className="absolute inset-0 bg-secondary/20 rounded-t-[10rem] rounded-b-3xl transform -rotate-6 group-hover:-rotate-12 transition-transform duration-500 blur-xl"></div>
-                <div className="relative overflow-hidden rounded-t-[10rem] rounded-b-3xl border-8 border-white shadow-2xl w-80 h-[30rem] md:w-96 md:h-[32rem]">
+                <div className="relative overflow-hidden rounded-t-[10rem] rounded-b-3xl border-8 border-white shadow-2xl w-72 h-[26rem] md:w-96 md:h-[32rem]">
                   <img 
                     src="/images/BhaveshAgrawal.jpeg" 
                     alt="Mr. Bhavesh Agrawal" 
@@ -66,38 +66,35 @@ const About = () => {
       </section>
 
       {/* Creative Project Glimpses */}
-      <section className="py-16 bg-white overflow-visible">
+      <section className="py-12 md:py-20 bg-white overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-6xl mx-auto items-center">
-            {/* Image 1 - Rotated & Floating */}
-            <div className="transform translate-y-8 md:translate-y-0 rotate-3 hover:rotate-0 transition-transform duration-500 hover:z-10">
-              <div className="bg-white p-2 shadow-xl rounded-2xl">
-                <img src="/images/vrindawanHeightsv1.jpeg" alt="Project 1" className="w-full h-40 md:h-56 object-cover rounded-xl" />
-                <p className="text-center text-xs font-bold text-gray-500 mt-2 tracking-widest uppercase">Vrindavan</p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-heading font-bold text-gray-800">Architectural Excellence</h2>
+            <div className="h-1 w-24 bg-primary mx-auto rounded-full mt-2"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
+            {/* Elevation 1 */}
+            <div className="transform md:translate-y-12 rotate-2 hover:rotate-0 transition-all duration-700 hover:scale-105 hover:z-10">
+              <div className="bg-white p-3 shadow-2xl rounded-2xl border border-gray-100">
+                <img src="/images/elevation1.jpeg" alt="Elevation Design 1" className="w-full h-auto object-cover rounded-xl shadow-inner" />
+                <p className="text-center text-xs font-bold text-gray-500 mt-3 tracking-widest uppercase">Modern Elevation</p>
               </div>
             </div>
 
-            {/* Image 2 - Offset Up */}
-            <div className="transform -translate-y-12 md:-translate-y-16 -rotate-2 hover:rotate-0 transition-transform duration-500 hover:z-10">
-              <div className="bg-white p-2 shadow-xl rounded-2xl">
-                 <img src="/images/ShubhamRowHouseV1.jpg" alt="Project 2" className="w-full h-48 md:h-64 object-cover rounded-xl" />
-                 <p className="text-center text-xs font-bold text-gray-500 mt-2 tracking-widest uppercase">Row Houses</p>
+            {/* Elevation 2 - Center Focus */}
+            <div className="transform md:-translate-y-8 z-10 hover:scale-110 transition-all duration-700 my-8 md:my-0">
+              <div className="bg-white p-3 shadow-2xl rounded-2xl border-4 border-white ring-1 ring-gray-100">
+                 <img src="/images/elevation2.jpeg" alt="Elevation Design 2" className="w-full h-auto object-cover rounded-xl shadow-lg" />
+                 <p className="text-center text-xs font-bold text-gray-500 mt-3 tracking-widest uppercase">Premium Design</p>
               </div>
             </div>
 
-            {/* Image 3 - Scale Effect */}
-            <div className="transform translate-y-4 rotate-2 hover:rotate-0 transition-transform duration-500 hover:z-10">
-              <div className="bg-white p-2 shadow-xl rounded-2xl">
-                <img src="/images/BunglowSoldv1.jpeg" alt="Project 3" className="w-full h-40 md:h-56 object-cover rounded-xl" />
-                <p className="text-center text-xs font-bold text-gray-500 mt-2 tracking-widest uppercase">Luxury Bunglows</p>
-              </div>
-            </div>
-            
-            {/* Image 4 - Decoration */}
-            <div className="transform -translate-y-8 -rotate-3 hover:rotate-0 transition-transform duration-500 hover:z-10">
-               <div className="bg-white p-2 shadow-xl rounded-2xl">
-                <img src="/images/IndramangalApartment.jpeg" alt="Project 4" className="w-full h-48 md:h-64 object-cover rounded-xl" />
-                <p className="text-center text-xs font-bold text-gray-500 mt-2 tracking-widest uppercase">Indramangal</p>
+            {/* Elevation 3 */}
+            <div className="transform md:translate-y-8 -rotate-2 hover:rotate-0 transition-all duration-700 hover:scale-105 hover:z-10">
+              <div className="bg-white p-3 shadow-2xl rounded-2xl border border-gray-100">
+                <img src="/images/elevation3.jpeg" alt="Elevation Design 3" className="w-full h-auto object-cover rounded-xl shadow-inner" />
+                <p className="text-center text-xs font-bold text-gray-500 mt-3 tracking-widest uppercase">Future Concepts</p>
               </div>
             </div>
           </div>
@@ -108,20 +105,20 @@ const About = () => {
       <JourneySection />
 
       {/* Stats Section */}
-      <section className="py-24 bg-gray-50 text-gray-800">
+      <section className="py-16 md:py-24 bg-gray-50 text-gray-800">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             
             <div className="text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent font-heading">50+</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent font-heading">50+</div>
               <div className="text-gray-600 font-body font-medium">Happy Customers</div>
             </div>
             <div className="text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent font-heading">50+</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent font-heading">50+</div>
               <div className="text-gray-600 font-body font-medium">Total Units</div>
             </div>
             <div className="text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent font-heading">2L+</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent font-heading">2L+</div>
               <div className="text-gray-600 font-body font-medium">Sq.ft. Constructed</div>
             </div>
           </div>

@@ -13,15 +13,15 @@ const Header = () => {
   };
 
   return (
-<header className="relative sticky top-0 z-50 shadow-lg bg-background/90 backdrop-blur">
+    <header className="relative sticky top-0 z-50 shadow-lg bg-background/90 backdrop-blur">
       
       <div className="relative z-10 container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center space-x-3">
             <img 
               src="/images/logo.png" 
               alt="Shubham Developers Logo" 
-              className="h-20 w-auto pl-10"
+              className="h-16 md:h-20 w-auto md:pl-10"
             />
           </Link>
 
@@ -74,7 +74,7 @@ const Header = () => {
 
           <button
             onClick={toggleMenu}
-            className="md:hidden text-black focus:outline-none"
+            className="md:hidden text-black focus:outline-none p-2"
             aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,26 +88,57 @@ const Header = () => {
         </div>
 
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-white border-opacity-20">
+          <nav className="md:hidden py-4 border-t border-gray-100 bg-white absolute left-0 right-0 shadow-xl px-4 animate-fade-in-down rounded-b-2xl">
             <div className="flex flex-col space-y-4">
-              <Link to="/" className="text-gray-700 hover:text-primary font-medium transition" onClick={toggleMenu}>
+              <Link to="/" className="text-gray-700 hover:text-primary font-medium transition px-2 py-1" onClick={toggleMenu}>
                 Home
               </Link>
-              <Link to="/about" className="text-gray-700 hover:text-primary font-medium transition" onClick={toggleMenu}>
+              <Link to="/about" className="text-gray-700 hover:text-primary font-medium transition px-2 py-1" onClick={toggleMenu}>
                 About
               </Link>
-              <Link to="/projects" className="text-gray-700 hover:text-primary font-medium transition" onClick={toggleMenu}>
+              <Link to="/projects" className="text-gray-700 hover:text-primary font-medium transition px-2 py-1" onClick={toggleMenu}>
                 Projects
               </Link>
-              <Link to="/services" className="text-gray-700 hover:text-primary font-medium transition" onClick={toggleMenu}>
+              <Link to="/services" className="text-gray-700 hover:text-primary font-medium transition px-2 py-1" onClick={toggleMenu}>
                 Services
               </Link>
-              <Link to="/contact" className="text-gray-700 hover:text-primary font-medium transition" onClick={toggleMenu}>
+              <Link to="/contact" className="text-gray-700 hover:text-primary font-medium transition px-2 py-1" onClick={toggleMenu}>
                 Contact Us
               </Link>
-              <button className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-lg hover:from-primary hover:to-secondary transition w-full shadow-lg">
+              
+              <div className="flex items-center space-x-6 px-2 py-2">
+                 <a 
+                  href="https://wa.me/919284844534" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-700 hover:text-green-600 transition-colors"
+                  aria-label="WhatsApp"
+                >
+                  <FaWhatsapp className="text-2xl" />
+                </a>
+                <a 
+                  href="https://www.instagram.com/my1st_residence?igsh=MTdxbm42OHp3MTNpaQ%3D%3D" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-700 hover:text-pink-600 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram className="text-2xl" />
+                </a>
+                <a 
+                  href="https://maps.app.goo.gl/jUoxAuLJKR5HVz4A7" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-700 hover:text-primary transition-colors"
+                  aria-label="Location"
+                >
+                  <IoLocationOutline className="text-2xl" />
+                </a>
+              </div>
+
+              <Link to="/contact" onClick={toggleMenu} className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-lg hover:shadow-lg transition w-full text-center font-bold">
                 Quick Inquiry
-              </button>
+              </Link>
             </div>
           </nav>
         )}

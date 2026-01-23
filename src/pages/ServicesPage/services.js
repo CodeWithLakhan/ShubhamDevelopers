@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaHome, FaCity, FaTree, FaDraftingCompass, FaHardHat, FaHandshake, FaCheckCircle, FaAward, FaUsers, FaClock } from "react-icons/fa";
 
 const Services = () => {
@@ -45,22 +46,22 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-28 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
+      <section className="relative py-16 md:py-28 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/30 rounded-full blur-[120px]"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <span className="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block animate-fade-in-up">What We Do</span>
-          <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-7xl font-heading font-bold mb-6 tracking-tight">
             Building Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Future</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 font-body font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-2xl text-gray-300 font-body font-light max-w-2xl mx-auto leading-relaxed">
             Comprehensive real estate solutions tailored to your dreams.
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-12 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-heading font-bold text-gray-800 mb-4">Our Expertise</h2>
@@ -90,14 +91,14 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-12 md:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
             <span className="text-primary font-bold tracking-widest uppercase text-sm">Workflow</span>
             <h2 className="text-4xl font-heading font-bold text-gray-800 mt-2">How We Build Dreams</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 relative max-w-6xl mx-auto">
             {/* Connector Line (Desktop) */}
             <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gray-200 -z-0"></div>
 
@@ -116,8 +117,58 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Artistic Perspectives - Floating Collage */}
+      <section className="py-16 md:py-28 bg-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -z-0"></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[80px] -z-0"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+             
+             {/* Text Content */}
+             <div className="w-full lg:w-1/3 text-center lg:text-left">
+                <span className="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">Aesthetic Living</span>
+                <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-800 mb-6 leading-tight">
+                   Where Art Meets <span className="italic text-primary">Architecture</span>
+                </h2>
+                <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                   Every project is a canvas where we blend functional design with visual poetry. We don't just build walls; we curate experiences that inspire and elevate everyday living.
+                </p>
+                <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto lg:mx-0"></div>
+             </div>
+
+             {/* Collage Images */}
+             <div className="w-full lg:w-2/3 relative h-96 md:h-[600px]">
+                {/* Main Large Image */}
+                <div className="absolute top-10 left-0 md:left-10 w-3/4 h-3/4 z-10 transform hover:scale-105 transition-transform duration-700">
+                   <div className="w-full h-full rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
+                      <img src="/images/ShivtaraV1.jpg" alt="Artistic Main" className="w-full h-full object-cover" />
+                   </div>
+                </div>
+
+                {/* Floating Overlay Image 1 (Top Right) */}
+                <div className="absolute -top-4 right-4 md:right-10 w-1/3 h-1/3 z-20 animate-float-slow">
+                   <div className="w-full h-full rounded-3xl overflow-hidden shadow-xl border-4 border-white rotate-6 hover:rotate-0 transition-transform duration-500">
+                      <img src="/images/elevation1.jpeg" alt="Artistic Detail 1" className="w-full h-full object-cover" />
+                   </div>
+                </div>
+
+                {/* Floating Overlay Image 2 (Bottom Right) */}
+                <div className="absolute bottom-10 right-0 md:right-20 w-56 h-56 z-20 animate-float-delayed">
+                   <div className="w-full h-full rounded-full overflow-hidden shadow-xl border-4 border-white">
+                      <img src="/images/ShubhamRowHouseV1.jpg" alt="Artistic Detail 2" className="w-full h-full object-cover" />
+                   </div>
+                </div>
+
+                {/* Decorative Blob */}
+                <div className="absolute bottom-0 left-10 w-32 h-32 bg-accent/20 rounded-full blur-xl animate-pulse"></div>
+             </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
-      <section className="py-24 bg-gray-900 text-white relative">
+      <section className="py-16 md:py-24 bg-gray-900 text-white relative">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-16">
@@ -130,14 +181,12 @@ const Services = () => {
               <p className="text-gray-400 text-lg mb-8 leading-relaxed">
                 We are more than just developers; we are partners in building your future. With decades of experience and a commitment to quality, we deliver value that lasts a lifetime.
               </p>
-              <button className="bg-white text-gray-900 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg flex items-center gap-2">
-                Learn More <FaCheckCircle className="text-green-500" />
-              </button>
+              
             </div>
 
             <div className="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
-                { icon: <FaAward />, title: '30+ Years Experience', desc: 'Decades of trust.' },
+                { icon: <FaAward />, title: 'Proven Expertise', desc: 'Built on trust and reliability..' },
                 { icon: <FaCheckCircle />, title: 'Premium Quality', desc: 'No compromise on materials.' },
                 { icon: <FaUsers />, title: 'Expert Team', desc: 'Skilled professionals.' },
                 { icon: <FaClock />, title: 'On-Time Delivery', desc: 'We value your time.' },
@@ -160,9 +209,9 @@ const Services = () => {
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Contact us today to discuss your real estate needs and let us help you build your dream reality.
           </p>
-          <button className="bg-white text-primary px-10 py-4 rounded-full font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300">
+          <Link to="/contact" className="inline-block bg-white text-primary px-10 py-4 rounded-full font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300">
             Get in Touch
-          </button>
+          </Link>
         </div>
       </section>
     </div>

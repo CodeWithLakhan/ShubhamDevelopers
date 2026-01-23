@@ -14,6 +14,9 @@ function App() {
   const location = useLocation();
 
   useLayoutEffect(() => {
+    // Scroll to top immediately on route change
+    window.scrollTo(0, 0);
+
     // Determine if this is the initial load or a route change
     setLoading(true);
     

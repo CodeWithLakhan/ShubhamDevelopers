@@ -153,7 +153,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[40vh] min-h-[300px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] min-h-[400px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 hover:scale-105"
@@ -166,10 +166,10 @@ const Home = () => {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-3xl md:text-7xl font-heading font-bold mb-3 md:mb-6 text-white drop-shadow-2xl animate-fade-in tracking-tight">
+            <h1 className="text-4xl min-[400px]:text-5xl md:text-7xl font-heading font-bold mb-4 md:mb-6 text-white drop-shadow-2xl animate-fade-in tracking-tight leading-tight">
               Shubham Developers
             </h1>
-            <p className="text-base md:text-3xl mb-4 md:mb-6 text-white font-body font-light drop-shadow-lg">
+            <p className="text-lg md:text-3xl mb-6 md:mb-6 text-white font-body font-light drop-shadow-lg">
               Turning Blueprints into Reality.
             </p>
             <div className="flex flex-row gap-3 justify-center">
@@ -179,9 +179,9 @@ const Home = () => {
               >
                 View Projects
               </Link>
-              <button className="border-2 border-white text-white px-4 py-2 md:px-8 md:py-4 text-xs md:text-base rounded-lg font-semibold hover:bg-white hover:text-primary hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl transform">
+              <Link to="/contact" className="border-2 border-white text-white px-4 py-2 md:px-8 md:py-4 text-xs md:text-base rounded-lg font-semibold hover:bg-white hover:text-primary hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl transform">
                 Quick Inquiry
-              </button>
+              </Link>
             </div>
             
             <a 
@@ -205,7 +205,7 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      <section className="py-12 md:py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
@@ -278,16 +278,16 @@ const Home = () => {
       </section> */}
 
       {/* Ongoing Projects Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <span className="text-primary font-semibold font-body tracking-wider uppercase text-sm">Real Estate Developers</span>
             <h2 className="text-4xl font-heading font-bold mt-2 mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Ongoing Projects</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-10">
             {ongoingProjects.slice(0, 3).map((project) => (
               <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group flex flex-col">
-                <div className="h-64 bg-gray-100 overflow-hidden relative">
+                <div className="h-48 md:h-64 bg-gray-100 overflow-hidden relative">
                   <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
                     spaceBetween={0}
@@ -303,7 +303,7 @@ const Home = () => {
                   >
                     {project.images.map((image, imgIndex) => (
                       <SwiperSlide key={imgIndex}>
-                        <div className="h-64 flex items-center justify-center bg-gray-100">
+                        <div className="h-48 md:h-64 flex items-center justify-center bg-gray-100">
                           <img 
                             src={image} 
                             alt={`${project.name} ${imgIndex + 1}`}
@@ -315,8 +315,8 @@ const Home = () => {
                   </Swiper>
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 pointer-events-none z-10"></div>
                 </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.name}</h3>
+                <div className="p-4 md:p-6 flex flex-col flex-grow">
+                  <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.name}</h3>
                   <p className="text-gray-600 text-sm mb-2">{project.location}</p>
                   {project.description && (
                     <p className="text-gray-700 mb-4 flex-grow">{project.description}</p>
@@ -365,14 +365,14 @@ const Home = () => {
       </section>
 
       {/* Owner Profile Section */}
-      <section className="py-24 bg-gradient-to-br from-white to-accent/20 overflow-hidden">
+      <section className="py-12 md:py-24 bg-gradient-to-br from-white to-accent/20 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
             {/* Image Side */}
             <div className="w-full md:w-1/2 flex justify-center ">
               <div className="relative group">
                 <div className="absolute inset-0 bg-primary/20 rounded-t-[10rem] rounded-b-3xl transform rotate-6 group-hover:rotate-12 transition-transform duration-500 blur-xl"></div>
-                <div className="relative overflow-hidden rounded-t-[10rem] rounded-b-3xl border-8 border-white shadow-2xl w-80 h-[30rem] md:w-96 md:h-[32rem]">
+                <div className="relative overflow-hidden rounded-t-[10rem] rounded-b-3xl border-8 border-white shadow-2xl w-full max-w-[20rem] h-[26rem] md:w-96 md:h-[32rem]">
                   <img 
                     src="/images/BhaveshAgrawal.jpeg" 
                     alt="Mr. Bhavesh Agrawal" 
