@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
+import { useForm } from '@formspree/react';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,11 +19,13 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your inquiry! We will get back to you soon.');
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log('Form submitted:', formData);
+  //   alert('Thank you for your inquiry! We will get back to you soon.');
+  // };
+  const [state, handleSubmit] = useForm("maqobdbp");
+
 
   const propertyTypes = [
     '1 BHK',
@@ -62,6 +66,21 @@ const Contact = () => {
               <h2 className="text-3xl font-heading font-bold mb-2 text-gray-800">Send us a Message</h2>
               <p className="text-gray-500 mb-8">Fill out the form below and our team will get back to you shortly.</p>
               
+              {state.succeeded ? (
+                 <div className="text-center py-16">
+                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-green-500 text-4xl mx-auto mb-6">
+                       <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    </div>
+                    <h3 className="text-3xl font-heading font-bold text-gray-800 mb-2">Message Sent!</h3>
+                    <p className="text-gray-600 mb-8">Thank you for your inquiry. Our team will get back to you shortly.</p>
+                    <button 
+                      onClick={() => window.location.reload()} 
+                      className="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition font-semibold"
+                    >
+                      Send Another Message
+                    </button>
+                 </div>
+              ) : (
               <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   <div>
@@ -141,11 +160,13 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 md:py-4 rounded-xl font-bold shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 text-sm md:text-base"
+                  disabled={state.submitting}
+                  className="w-full bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 md:py-4 rounded-xl font-bold shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 text-sm md:text-base disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Send Inquiry
+                  {state.submitting ? 'Sending...' : 'Send Inquiry'}
                 </button>
               </form>
+              )}
             </div>
 
             {/* Contact Info */}
