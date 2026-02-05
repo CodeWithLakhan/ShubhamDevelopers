@@ -1,3 +1,4 @@
+import SEO from '../../components/SEO';
 import React, { useState } from 'react';
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
 import { useForm } from '@formspree/react';
@@ -38,6 +39,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Contact Us | Shubham Developers"
+        description="Get in touch with Shubham Developers for your next home or commercial property. Located in Shirpur."
+        url="/contact"
+      />
       {/* Hero Section */}
       <section className="relative py-16 md:py-28 bg-gradient-to-b from-gray-900 to-gray-800 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
@@ -216,8 +222,8 @@ const Contact = () => {
                    </div>
                    <div>
                      <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-1 md:mb-2">Email Us</h3>
-                     <a href="mailto:info@shubhamdevelopers.com" className="text-sm md:text-lg text-gray-600 hover:text-primary transition-colors break-all">
-                       info@shubhamdevelopers.com
+                     <a href="mailto:shuhbamdevelopers2023@gmail.com" className="text-sm md:text-lg text-gray-600 hover:text-primary transition-colors break-all">
+                       shuhbamdevelopers2023@gmail.com
                      </a>
                    </div>
                  </div>
@@ -264,8 +270,8 @@ const Contact = () => {
          <div className="relative flex-1 group hover:flex-[3] transition-all duration-700 ease-in-out cursor-pointer overflow-hidden">
              <img src="/images/elevation3.jpeg" alt="Glimpse 4" className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700 scale-105 group-hover:scale-100" />
              <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
-               <h3 className="text-2xl font-heading font-bold text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Future Ready</h3>
-               <p className="text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 text-sm">Tomorrow's lifestyle today.</p>
+               <h3 className="text-2xl font-heading font-bold text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Commercial Ready</h3>
+               <p className="text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 text-sm">Tomorrow's Businesses today.</p>
              </div>
          </div>
 

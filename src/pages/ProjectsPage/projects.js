@@ -1,3 +1,4 @@
+import SEO from '../../components/SEO';
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -32,6 +33,28 @@ const Projects = () => {
       locationLink: 'https://maps.app.goo.gl/KRDf49pUfKcmqgnt7?g_st=awb'
     },
     {
+      id: 6,
+      name: 'Shivtara Residency',
+      location: 'Mahaveer Vihar, Near City pride mall',
+      description: '2BHK Luxurious Row Houses. ',
+      tags: ['Residential', 'Row House'],
+      status: ['ongoing'],
+      images: ['/images/ShivtaraV1.jpg', '/images/ShivtaraV2.jpg'],
+      floormap: '#',
+      locationLink: 'https://maps.app.goo.gl/QoG5m6oaiuChmMBy7?g_st=awb'
+    },
+    {
+      id: 4,
+      name: 'Indramangal Apartment',
+      location: 'Mahaveer Vihar, Near City pride Mall',
+      description: 'Classic residential 2BHK Flats defining standard urban living.',
+      tags: ['Residential', 'Apartment'],
+      status: ['completed','ready possession'],
+      images: ['/images/IndramangalApartment.jpeg'],
+      floormap: '',
+      locationLink: ''
+    },
+    {
       id: 3,
       name: '4BHK Luxurious Bunglow',
       location: 'Mahaveer Lawns, Mandal Shivar',
@@ -42,17 +65,7 @@ const Projects = () => {
       floormap: '',
       locationLink: ''
     },
-    {
-      id: 4,
-      name: 'Indramangal Apartment',
-      location: 'Mahaveer Vihar, Near City pride Mall',
-      description: 'Classic residential 2BHK Flats defining standard urban living.',
-      tags: ['Residential', 'Apartment'],
-      status: ['completed'],
-      images: ['/images/IndramangalApartment.jpeg'],
-      floormap: '',
-      locationLink: ''
-    },
+    
     {
       id: 5,
       name: 'Shubham Residency',
@@ -65,16 +78,17 @@ const Projects = () => {
       locationLink: 'https://maps.app.goo.gl/Fv3ZBh4ehCPoHsQ6A?g_st=awb'
     },
     {
-      id: 6,
-      name: 'Shivtara Residency',
-      location: 'Mahaveer Vihar, Near City pride mall',
-      description: '2BHK Luxurious Row Houses. ',
-      tags: ['Residential', 'Row House'],
-      status: ['ongoing'],
-      images: ['/images/ShivtaraV1.jpg', '/images/ShivtaraV2.jpg'],
+      id: 7,
+      name: 'Bunglow (Sold)',
+      location: 'Laxmi Nagar Mandal ',
+      description: 'Premium standalone Elevated bunglow.',
+      tags: ['Residential', 'Bunglow'],
+      status: ['completed','sold'],
+      images: ['/images/SoldBunglow2.jpeg'],
       floormap: '#',
-      locationLink: 'https://maps.app.goo.gl/QoG5m6oaiuChmMBy7?g_st=awb'
+      locationLink: ''
     },
+    
   ];
 
   const filteredProjects = activeTab === 'all' 
@@ -83,6 +97,11 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Our Projects | Shubham Developers"
+        description="Explore our portfolio of successful residential and commercial projects delivered by Shubham Developers in Shirpur."
+        url="/projects"
+      />
       {/* Hero Section */}
       <section className="relative py-16 md:py-28 bg-gradient-to-b from-gray-900 to-gray-800 text-white overflow-hidden">
         {/* Background Pattern */}

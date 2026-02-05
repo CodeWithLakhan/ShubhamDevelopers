@@ -1,9 +1,15 @@
+import SEO from '../../components/SEO';
 import React from 'react';
 import JourneySection from '../../components/JourneySection';
 
 const About = () => {
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="About Us | Shubham Developers"
+        description="Learn more about Shubham Developers, our mission, vision, and the team behind the best real estate projects in Shirpur."
+        url="/about"
+      />
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 bg-primary/5 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -31,7 +37,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-secondary/20 rounded-t-[10rem] rounded-b-3xl transform -rotate-6 group-hover:-rotate-12 transition-transform duration-500 blur-xl"></div>
                 <div className="relative overflow-hidden rounded-t-[10rem] rounded-b-3xl border-8 border-white shadow-2xl w-72 h-[26rem] md:w-96 md:h-[32rem]">
                   <img 
-                    src="/images/BhaveshAgrawal.jpeg" 
+                    src="/images/BhaveshAgrawal.png" 
                     alt="Mr. Bhavesh Agrawal" 
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />

@@ -1,3 +1,4 @@
+import SEO from '../../components/SEO';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaHome, FaCity, FaTree, FaDraftingCompass, FaHardHat, FaHandshake, FaCheckCircle, FaAward, FaUsers, FaClock } from "react-icons/fa";
@@ -45,6 +46,11 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Our Services | Shubham Developers"
+        description="We offer Residential Development, Commercial Projects, Themed Landscaping, and Technical Planning services tailored to your needs."
+        url="/services"
+      />
       {/* Hero Section */}
       <section className="relative py-16 md:py-28 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
@@ -142,21 +148,21 @@ const Services = () => {
                 {/* Main Large Image */}
                 <div className="absolute top-10 left-0 md:left-10 w-3/4 h-3/4 z-10 transform hover:scale-105 transition-transform duration-700">
                    <div className="w-full h-full rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
-                      <img src="/images/ShivtaraV1.jpg" alt="Artistic Main" className="w-full h-full object-cover" />
+                      <img src="/images/elevation6.jpeg" alt="Artistic Main" className="w-full h-full object-cover" />
                    </div>
                 </div>
 
                 {/* Floating Overlay Image 1 (Top Right) */}
                 <div className="absolute -top-4 right-4 md:right-10 w-1/3 h-1/3 z-20 animate-float-slow">
                    <div className="w-full h-full rounded-3xl overflow-hidden shadow-xl border-4 border-white rotate-6 hover:rotate-0 transition-transform duration-500">
-                      <img src="/images/elevation1.jpeg" alt="Artistic Detail 1" className="w-full h-full object-cover" />
+                      <img src="/images/elevation5.jpeg" alt="Artistic Detail 1" className="w-full h-full object-cover" />
                    </div>
                 </div>
 
                 {/* Floating Overlay Image 2 (Bottom Right) */}
                 <div className="absolute bottom-10 right-0 md:right-20 w-56 h-56 z-20 animate-float-delayed">
                    <div className="w-full h-full rounded-full overflow-hidden shadow-xl border-4 border-white">
-                      <img src="/images/ShubhamRowHouseV1.jpg" alt="Artistic Detail 2" className="w-full h-full object-cover" />
+                      <img src="/images/elevation4.jpeg" alt="Artistic Detail 2" className="w-full h-full object-cover" />
                    </div>
                 </div>
 

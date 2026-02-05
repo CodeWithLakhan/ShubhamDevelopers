@@ -1,3 +1,5 @@
+import SEO from '../../components/SEO';
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSmile, FaHome, FaRulerCombined, FaInstagram } from "react-icons/fa";
@@ -78,38 +80,35 @@ const Home = () => {
     {
       id: 1,
       name: 'Vrindavan Heights',
-      location: 'Mandal',
-      description: '2BHK and 1 BHK Flats',
-      images: [
-        '/images/vrindawanHeightsv1.jpeg',
-        '/images/vrindawanHeightsv2.jpg', // Add more images here
-      ],
-      brochure: '/brochures/vrindavan-heights.pdf', 
-      mapLink: '' 
+      location: 'Near Mandal gate, Shirpur',
+      description: '2BHK and 1 BHK Flats. A perfect blend of comfort and affordability.',
+      tags: ['Residential', 'Flats'],
+      status: ['completed' , 'ready possession'],
+      images: ['/images/vrindawanHeightsv1.jpeg', '/images/vrindawanHeightsv2.jpg'],
+      floormap: '#asjdn',
+      locationLink: 'https://maps.app.goo.gl/PAa28XQdwnw81YiW8?g_st=awb'
     },
     {
       id: 2,
       name: 'Shubham Row House',
-      location: 'NavjeevanPark, Near SPDM College',
-      description: '2BHK Row Houses ',
-      images: [
-        '/images/ShubhamRowHouseV1.jpg',
-        '/images/ShubhamRowHouseV2.jpg', // Add more images here
-      ],
-      brochure: '', 
-      mapLink: '' 
+      location: 'Navjeevan Park, Near SPDM College',
+      description: '2BHK Luxurious Row Houses designed for modern families.',
+      tags: ['Residential', 'Row House'],
+      status: ['ongoing', 'booking open'],
+      images: ['/images/ShubhamRowHouseV1.jpg', '/images/ShubhamRowHouseV2.jpg'],
+      floormap: 'https://asmd.com',
+      locationLink: 'https://maps.app.goo.gl/KRDf49pUfKcmqgnt7?g_st=awb'
     },
     {
-      id: 3,
-      name: 'Bunglow (Sold)',
-      location: 'Mahaveer Lawns, Mandal Shivar',
-      description: '',
-      images: [
-        '/images/BunglowSoldv1.jpeg',
-        '/images/BunglowSoldv2.jpeg', // Add more images here
-      ],
-      brochure: '', 
-      mapLink: '' 
+       id: 5,
+       name: 'Shubham Residency',
+       location: 'Vasant anna nagar, Karvand road',
+       description: 'Premium standalone 2BHK Row Houses.',
+       tags: ['Residential', 'Row House'],
+       status: ['ongoing'],
+       images: ['/images/ShubhamResidencyView1.jpg', '/images/ShubhamResidencyView2.jpg'],
+       floormap: '#',
+       locationLink: 'https://maps.app.goo.gl/Fv3ZBh4ehCPoHsQ6A?g_st=awb'
     },
     
   ];
@@ -152,6 +151,11 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Shubham Developers | Top Real Estate Developer in Shirpur"
+        description="Shubham Developers provides professional real estate development, premium apartments, row houses, and commercial projects in Shirpur. Contact us for your dream home."
+        keywords="Shubham Developers, Real Estate Shirpur, 2BHK Flats Shirpur, Row Houses Shirpur, Builders in Shirpur, Property in Shirpur"
+      />
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] md:h-screen md:min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -285,67 +289,104 @@ const Home = () => {
             <h2 className="text-4xl font-heading font-bold mt-2 mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Ongoing Projects</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-10">
-            {ongoingProjects.slice(0, 3).map((project) => (
-              <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group flex flex-col">
-                <div className="h-48 md:h-64 bg-gray-100 overflow-hidden relative">
-                  <Swiper
-                    modules={[Navigation, Pagination, Autoplay]}
-                    spaceBetween={0}
-                    slidesPerView={1}
-                    navigation={true}
-                    pagination={{ clickable: true }}
-                    autoplay={{
-                      delay: 3000,
-                      disableOnInteraction: false,
-                    }}
-                    loop={project.images.length > 1}
-                    className="project-swiper h-full"
-                  >
-                    {project.images.map((image, imgIndex) => (
-                      <SwiperSlide key={imgIndex}>
-                        <div className="h-48 md:h-64 flex items-center justify-center bg-gray-100">
-                          <img 
-                            src={image} 
-                            alt={`${project.name} ${imgIndex + 1}`}
-                            className="w-full h-full object-contain p-2"
-                          />
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 pointer-events-none z-10"></div>
-                </div>
-                <div className="p-4 md:p-6 flex flex-col flex-grow">
-                  <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.name}</h3>
-                  <p className="text-gray-600 text-sm mb-2">{project.location}</p>
-                  {project.description && (
-                    <p className="text-gray-700 mb-4 flex-grow">{project.description}</p>
+            {ongoingProjects.map((project) => (
+              <div 
+                key={project.id} 
+                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex flex-col"
+              >
+                {/* Image Gallery (Swiper) */}
+                <div className="h-56 relative bg-gray-100">
+                  {project.images.length > 1 ? (
+                    <Swiper
+                      modules={[Navigation, Pagination, Autoplay]}
+                      spaceBetween={0}
+                      slidesPerView={1}
+                      navigation
+                      pagination={{ clickable: true }}
+                      autoplay={{ delay: 3500, disableOnInteraction: false }}
+                      loop={true}
+                      className="h-full project-swiper"
+                    >
+                      {project.images.map((img, index) => (
+                        <SwiperSlide key={index}>
+                           <div className="h-full w-full relative">
+                              <img src={img} alt={`${project.name} ${index + 1}`} className="w-full h-full object-cover" />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                           </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  ) : (
+                    <div className="h-full w-full relative">
+                        <img src={project.images[0]} alt={project.name} className="w-full h-full object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
                   )}
-                  <div className="flex flex-col sm:flex-row gap-3 mt-auto">
-                    <a
-                      href={project.brochure}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-semibold hover:from-primary hover:to-secondary transition-all duration-300 text-center text-sm flex items-center justify-center gap-2 shadow-md"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                      </svg>
-                      Brochure
-                    </a>
-                    <a
-                      href={project.mapLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-white border-2 border-primary text-primary px-4 py-2 rounded-lg font-semibold hover:bg-accent transition-all duration-300 text-center text-sm flex items-center justify-center gap-2"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                      View Map
-                    </a>
+                  
+                  {/* Status Badges */}
+                  <div className="absolute top-3 right-3 z-10 flex flex-col gap-2 items-end">
+                    {project.status.map((status, idx) => (
+                      <div key={idx} className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white shadow-lg ${
+                        status === 'ongoing' ? 'bg-green-500' : 
+                        status === 'completed' ? 'bg-blue-500' :
+                        status === 'booking open' ? 'bg-yellow-500' :
+                        'bg-red-500'
+                      }`}>
+                        {status}
+                      </div>
+                    ))}
                   </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-grow relative">
+                   {/* Tags */}
+                   <div className="flex flex-wrap gap-2 mb-3">
+                     {project.tags.map((tag, i) => (
+                       <span key={i} className="text-secondary text-[10px] font-bold tracking-widest uppercase bg-secondary/10 px-2 py-1 rounded-md">
+                         {tag}
+                       </span>
+                     ))}
+                   </div>
+                  
+                  <h3 className="text-xl font-heading font-bold text-gray-800 mb-2 group-hover:text-primary transition-colors">
+                    {project.name}
+                  </h3>
+                  
+                  <div className="flex items-center text-gray-500 mb-4 text-sm font-medium">
+                     <svg className="w-4 h-4 mr-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                     {project.location}
+                  </div>
+                  
+                  <p className="text-gray-600 font-body leading-relaxed mb-6 flex-grow">
+                    {project.description}
+                  </p>
+
+                  <div className="flex gap-3">
+                    {project.floormap && project.floormap !== '#' && (
+                      <a 
+                        href={project.floormap}
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        className="flex-1 py-2.5 text-sm rounded-xl border border-gray-300 bg-gray-100 font-bold text-gray-800 hover:border-secondary hover:text-white hover:bg-secondary transition-all duration-300 text-center flex items-center justify-center gap-2 shadow-sm"
+                      >
+                        <span>📐</span> Floor Map
+                      </a>
+                    )}
+                    {project.locationLink && project.locationLink !== 'https://maps.google.com' && (
+                      <a 
+                        href={project.locationLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 py-2.5 text-sm rounded-xl border border-gray-300 bg-gray-100 font-bold text-gray-800 hover:border-primary hover:text-white hover:bg-primary transition-all duration-300 text-center flex items-center justify-center gap-2 shadow-sm"
+                      >
+                        <span>📍</span> Location
+                      </a>
+                    )}
+                  </div>
+                  
+                  {/* Decorative corner */}
+                  <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-br from-transparent to-gray-50 rounded-tl-[3rem] -z-10 group-hover:scale-150 transition-transform duration-500"></div>
                 </div>
               </div>
             ))}
@@ -374,7 +415,7 @@ const Home = () => {
                 <div className="absolute inset-0 bg-primary/20 rounded-t-[10rem] rounded-b-3xl transform rotate-6 group-hover:rotate-12 transition-transform duration-500 blur-xl"></div>
                 <div className="relative overflow-hidden rounded-t-[10rem] rounded-b-3xl border-8 border-white shadow-2xl w-full max-w-[20rem] h-[26rem] md:w-96 md:h-[32rem]">
                   <img 
-                    src="/images/BhaveshAgrawal.jpeg" 
+                    src="/images/BhaveshAgrawal.png" 
                     alt="Mr. Bhavesh Agrawal" 
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />
