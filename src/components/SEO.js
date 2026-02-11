@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, keywords, image, url }) => {
   const siteUrl = window.location.origin;
-  const defaultImage = `${siteUrl}/logo192.png`; // Fallback image
+  const defaultImage = `${siteUrl}/images/logo.png`; // Fallback image
 
   const metaTitle = title || "Shubham Developers | Top Web Development Agency in Shirpur";
   const metaDescription = description || "Shubham Developers provides professional web development, SEO, and software solutions in Shirpur. Contact us for custom websites and apps.";

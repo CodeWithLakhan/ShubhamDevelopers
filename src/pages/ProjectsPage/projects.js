@@ -18,7 +18,7 @@ const Projects = () => {
       tags: ['Residential', 'Flats'],
       status: ['completed' , 'ready possession'],
       images: ['/images/vrindawanHeightsv1.jpeg', '/images/vrindawanHeightsv2.jpg'],
-      floormap: '#asjdn',
+      floormap: '/FloorMaps/VrindavanFloorPlan.pdf',
       locationLink: 'https://maps.app.goo.gl/PAa28XQdwnw81YiW8?g_st=awb'
     },
     {
@@ -29,7 +29,7 @@ const Projects = () => {
       tags: ['Residential', 'Row House'],
       status: ['ongoing', 'booking open'],
       images: ['/images/ShubhamRowHouseV1.jpg', '/images/ShubhamRowHouseV2.jpg'],
-      floormap: 'https://asmd.com',
+      floormap: '/FloorMaps/ShubhamRowHouseFloorPlan.pdf',
       locationLink: 'https://maps.app.goo.gl/KRDf49pUfKcmqgnt7?g_st=awb'
     },
     {
@@ -40,7 +40,7 @@ const Projects = () => {
       tags: ['Residential', 'Row House'],
       status: ['ongoing'],
       images: ['/images/ShivtaraV1.jpg', '/images/ShivtaraV2.jpg'],
-      floormap: '#',
+      floormap: '/FloorMaps/ShivtaraFloorMap.pdf',
       locationLink: 'https://maps.app.goo.gl/QoG5m6oaiuChmMBy7?g_st=awb'
     },
     {
@@ -74,7 +74,7 @@ const Projects = () => {
       tags: ['Residential', 'Row House'],
       status: ['ongoing'],
       images: ['/images/ShubhamResidencyView1.jpg', '/images/ShubhamResidencyView2.jpg'],
-      floormap: '#',
+      floormap: '/FloorMaps/ShubhamResidencyFloorPlan.pdf',
       locationLink: 'https://maps.app.goo.gl/Fv3ZBh4ehCPoHsQ6A?g_st=awb'
     },
     {
@@ -230,6 +230,7 @@ const Projects = () => {
                         href={project.floormap}
                         target="_blank"
                         rel="noopener noreferrer" 
+                        download
                         className="flex-1 py-2.5 text-sm rounded-xl border border-gray-300 bg-gray-100 font-bold text-gray-800 hover:border-secondary hover:text-white hover:bg-secondary transition-all duration-300 text-center flex items-center justify-center gap-2 shadow-sm"
                       >
                         <span>📐</span> Floor Map
