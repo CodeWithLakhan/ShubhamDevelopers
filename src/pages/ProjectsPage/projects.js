@@ -1,10 +1,7 @@
 import SEO from '../../components/SEO';
+import ProjectCard from '../../components/ProjectCard';
 import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -18,7 +15,7 @@ const Projects = () => {
       tags: ['Residential', 'Flats'],
       status: ['completed' , 'ready possession'],
       images: ['/images/vrindawanHeightsv1.jpeg', '/images/vrindawanHeightsv2.jpg'],
-      floormap: '/FloorMaps/VrindavanFloorPlan.pdf',
+      floormap: 'https://drive.google.com/file/d/1FUCXCa5KyipmXWzpS2Ux8Q1BtmeiHZD8/view?usp=drive_link',
       locationLink: 'https://maps.app.goo.gl/PAa28XQdwnw81YiW8?g_st=awb'
     },
     {
@@ -29,7 +26,7 @@ const Projects = () => {
       tags: ['Residential', 'Row House'],
       status: ['ongoing', 'booking open'],
       images: ['/images/ShubhamRowHouseV1.jpg', '/images/ShubhamRowHouseV2.jpg'],
-      floormap: '/FloorMaps/ShubhamRowHouseFloorPlan.pdf',
+      floormap: 'https://drive.google.com/file/d/1kJ_nbzgmsmVZi5FPOZUDb1DWoMMgZuE2/view?usp=drive_link',
       locationLink: 'https://maps.app.goo.gl/KRDf49pUfKcmqgnt7?g_st=awb'
     },
     {
@@ -40,8 +37,19 @@ const Projects = () => {
       tags: ['Residential', 'Row House'],
       status: ['ongoing'],
       images: ['/images/ShivtaraV1.jpg', '/images/ShivtaraV2.jpg'],
-      floormap: '/FloorMaps/ShivtaraFloorMap.pdf',
+      floormap: 'https://drive.google.com/file/d/19jtXflevJnHl-rFIklPYDWjA09d-5ZYQ/view?usp=drive_link',
       locationLink: 'https://maps.app.goo.gl/QoG5m6oaiuChmMBy7?g_st=awb'
+    },
+    {
+      id: 5,
+      name: 'Shubham Residency',
+      location: 'Vasant anna nagar, Karvand road',
+      description: 'Premium standalone 2BHK Row Houses.',
+      tags: ['Residential', 'Row House'],
+      status: ['ongoing'],
+      images: ['/images/ShubhamResidencyView1.jpg', '/images/ShubhamResidencyView2.jpg'],
+      floormap: 'https://drive.google.com/file/d/16Qml4o83a2o09RIuE6IAVvp9wd5Uf3Ki/view?usp=drive_link',
+      locationLink: 'https://maps.app.goo.gl/Fv3ZBh4ehCPoHsQ6A?g_st=awb'
     },
     {
       id: 4,
@@ -49,7 +57,7 @@ const Projects = () => {
       location: 'Mahaveer Vihar, Near City pride Mall',
       description: 'Classic residential 2BHK Flats defining standard urban living.',
       tags: ['Residential', 'Apartment'],
-      status: ['completed','ready possession'],
+      status: ['completed','Sold out'],
       images: ['/images/IndramangalApartment.jpeg'],
       floormap: '',
       locationLink: ''
@@ -66,17 +74,7 @@ const Projects = () => {
       locationLink: ''
     },
     
-    {
-      id: 5,
-      name: 'Shubham Residency',
-      location: 'Vasant anna nagar, Karvand road',
-      description: 'Premium standalone 2BHK Row Houses.',
-      tags: ['Residential', 'Row House'],
-      status: ['ongoing'],
-      images: ['/images/ShubhamResidencyView1.jpg', '/images/ShubhamResidencyView2.jpg'],
-      floormap: '/FloorMaps/ShubhamResidencyFloorPlan.pdf',
-      locationLink: 'https://maps.app.goo.gl/Fv3ZBh4ehCPoHsQ6A?g_st=awb'
-    },
+    
     {
       id: 7,
       name: 'Bunglow (Sold)',
@@ -152,106 +150,7 @@ const Projects = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {filteredProjects.map((project) => (
-              <div 
-                key={project.id} 
-                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex flex-col"
-              >
-                {/* Image Gallery (Swiper) */}
-                <div className="h-56 relative bg-gray-100">
-                  {project.images.length > 1 ? (
-                    <Swiper
-                      modules={[Navigation, Pagination, Autoplay]}
-                      spaceBetween={0}
-                      slidesPerView={1}
-                      navigation
-                      pagination={{ clickable: true }}
-                      autoplay={{ delay: 3500, disableOnInteraction: false }}
-                      loop={true}
-                      className="h-full project-swiper"
-                    >
-                      {project.images.map((img, index) => (
-                        <SwiperSlide key={index}>
-                           <div className="h-full w-full relative">
-                              <img src={img} alt={`${project.name} ${index + 1}`} className="w-full h-full object-cover" />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                           </div>
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
-                  ) : (
-                    <div className="h-full w-full relative">
-                        <img src={project.images[0]} alt={project.name} className="w-full h-full object-cover" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                  )}
-                  
-                  {/* Status Badges */}
-                  <div className="absolute top-3 right-3 z-10 flex flex-col gap-2 items-end">
-                    {project.status.map((status, idx) => (
-                      <div key={idx} className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white shadow-lg ${
-                        status === 'ongoing' ? 'bg-green-500' : 
-                        status === 'completed' ? 'bg-blue-500' :
-                        status === 'booking open' ? 'bg-yellow-500' :
-                        'bg-red-500'
-                      }`}>
-                        {status}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 flex flex-col flex-grow relative">
-                   {/* Tags */}
-                   <div className="flex flex-wrap gap-2 mb-3">
-                     {project.tags.map((tag, i) => (
-                       <span key={i} className="text-secondary text-[10px] font-bold tracking-widest uppercase bg-secondary/10 px-2 py-1 rounded-md">
-                         {tag}
-                       </span>
-                     ))}
-                   </div>
-                  
-                  <h3 className="text-xl font-heading font-bold text-gray-800 mb-2 group-hover:text-primary transition-colors">
-                    {project.name}
-                  </h3>
-                  
-                  <div className="flex items-center text-gray-500 mb-4 text-sm font-medium">
-                     <svg className="w-4 h-4 mr-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                     {project.location}
-                  </div>
-                  
-                  <p className="text-gray-600 font-body leading-relaxed mb-6 flex-grow">
-                    {project.description}
-                  </p>
-
-                  <div className="flex gap-3">
-                    {project.floormap && project.floormap !== '#' && (
-                      <a 
-                        href={project.floormap}
-                        target="_blank"
-                        rel="noopener noreferrer" 
-                        download
-                        className="flex-1 py-2.5 text-sm rounded-xl border border-gray-300 bg-gray-100 font-bold text-gray-800 hover:border-secondary hover:text-white hover:bg-secondary transition-all duration-300 text-center flex items-center justify-center gap-2 shadow-sm"
-                      >
-                        <span>📐</span> Floor Map
-                      </a>
-                    )}
-                    {project.locationLink && project.locationLink !== 'https://maps.google.com' && (
-                      <a 
-                        href={project.locationLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 py-2.5 text-sm rounded-xl border border-gray-300 bg-gray-100 font-bold text-gray-800 hover:border-primary hover:text-white hover:bg-primary transition-all duration-300 text-center flex items-center justify-center gap-2 shadow-sm"
-                      >
-                        <span>📍</span> Location
-                      </a>
-                    )}
-                  </div>
-                  
-                  {/* Decorative corner */}
-                  <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-br from-transparent to-gray-50 rounded-tl-[3rem] -z-10 group-hover:scale-150 transition-transform duration-500"></div>
-                </div>
-              </div>
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
 

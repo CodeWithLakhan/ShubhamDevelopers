@@ -60,10 +60,10 @@ const About = () => {
               
               <div className="space-y-6 text-gray-600 font-body text-lg leading-relaxed relative">
                  <p>
-                   <strong>Mr. Bhavesh Shubhashchandra Agrawal</strong> established Shubham Developers with a singular mission: to bring world-class construction standards to the heart of Shirley. As a visionary leader, his approach goes beyond mere aesthetics; it is rooted in structural integrity and functional design.
+                   <strong>Mr. Bhavesh Shubhashchandra Agrawal</strong> started Shubham Developers with focus on delivering thoughtfully planned residential and commercial projects in Shirpur. Every development is designed with attention to quality, practical layouts, and long-term usability, ensuring spaces that remain valuable and reliable over time.
                  </p>
                  <p>
-                   "We don't just build structures; we create environments where families thrive. Every project is a personal commitment to quality, ensuring that our customers invest not just in a home, but in a better future."
+                   Each project reflects a commitment to careful planning and consistent standards, creating spaces that support everyday living and business needs while contributing positively to the surrounding area.
                  </p>
               </div>
             </div>
@@ -116,15 +116,15 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             
             <div className="text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent font-heading">50+</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2 text-primary font-heading">50+</div>
               <div className="text-gray-600 font-body font-medium">Happy Customers</div>
             </div>
             <div className="text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent font-heading">50+</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2 text-primary font-heading">50+</div>
               <div className="text-gray-600 font-body font-medium">Total Units</div>
             </div>
             <div className="text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent font-heading">2L+</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2 text-primary font-heading">2L+</div>
               <div className="text-gray-600 font-body font-medium">Sq.ft. Constructed</div>
             </div>
           </div>

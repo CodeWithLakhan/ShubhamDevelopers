@@ -9,26 +9,26 @@ const milestones = [
   },
   {
     year: '2023',
-    title: 'Expansion',
+    title: 'Vrindavan Heights Aparment',
     description: ' Indramangal Row Houses and Vrindavan Hights.',
     icon: '🏢'
   },
   {
     year: '2024',
-    title: '10+ Banglows.',
-    description: '10+ Banglows.',
+    title: '10+ Projects.',
+    description: 'Bungalows, RowHouses, Aparments',
     icon: '🏆'
   },
   {
     year: '2025',
-    title: '30+ Projects',
-    description: 'Started consulting for more then 30 projects.',
+    title: 'Multiple Projects',
+    description: 'Worked on and delivered multiple projects involving planning, execution, and on-site coordination.',
     icon: '🌍'
   },
   {
     year: '2026',
-    title: 'Multiple Row Houses',
-    description: 'Lunches multiple Row Houses schemes at multiplelocations.',
+    title: 'Associate Collaborations',
+    description: 'Started and managed multiple projects in collaboration with associates across different locations..',
     icon: '🚀'
   }
 ];
