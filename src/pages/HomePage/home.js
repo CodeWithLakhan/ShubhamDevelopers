@@ -82,7 +82,7 @@ const Home = () => {
       tags: ['Residential', 'Flats'],
       status: ['completed' , 'ready possession'],
       images: ['/images/vrindawanHeightsv1.jpeg', '/images/vrindawanHeightsv2.jpg'],
-      floormap: '/FloorMaps/VrindavanFloorPlan.pdf',
+      floormap: 'https://drive.google.com/file/d/1FUCXCa5KyipmXWzpS2Ux8Q1BtmeiHZD8/view?usp=drive_link',
       locationLink: 'https://maps.app.goo.gl/PAa28XQdwnw81YiW8?g_st=awb'
     },
     {
@@ -93,7 +93,7 @@ const Home = () => {
       tags: ['Residential', 'Row House'],
       status: ['ongoing', 'booking open'],
       images: ['/images/ShubhamRowHouseV1.jpg', '/images/ShubhamRowHouseV2.jpg'],
-      floormap: '/FloorMaps/ShubhamRowHouseFloorPlan.pdf',
+      floormap: 'https://drive.google.com/file/d/1kJ_nbzgmsmVZi5FPOZUDb1DWoMMgZuE2/view?usp=drive_link',
       locationLink: 'https://maps.app.goo.gl/KRDf49pUfKcmqgnt7?g_st=awb'
     },
     {
@@ -104,7 +104,7 @@ const Home = () => {
        tags: ['Residential', 'Row House'],
        status: ['ongoing'],
        images: ['/images/ShubhamResidencyView1.jpg', '/images/ShubhamResidencyView2.jpg'],
-       floormap: '/FloorMaps/ShubhamResidencyFloorPlan.pdf',
+       floormap: 'https://drive.google.com/file/d/16Qml4o83a2o09RIuE6IAVvp9wd5Uf3Ki/view?usp=drive_link',
        locationLink: 'https://maps.app.goo.gl/Fv3ZBh4ehCPoHsQ6A?g_st=awb'
     },
     
