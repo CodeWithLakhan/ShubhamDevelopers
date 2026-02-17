@@ -14,19 +14,19 @@ const ProjectCard = ({ project }) => {
     setSelectedImageIndex(index);
   };
 
-  const closeFullScreen = () => {
+  const closeFullScreen = useCallback(() => {
     setSelectedImageIndex(null);
-  };
+  }, []);
 
-  const handleNext = (e) => {
-    e.stopPropagation();
+  const handleNext = useCallback((e) => {
+    e?.stopPropagation();
     setSelectedImageIndex((prev) => (prev + 1) % project.images.length);
-  };
+  }, [project.images.length]);
 
-  const handlePrev = (e) => {
-    e.stopPropagation();
+  const handlePrev = useCallback((e) => {
+    e?.stopPropagation();
     setSelectedImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
-  };
+  }, [project.images.length]);
 
   // Handle keyboard navigation
   useEffect(() => {
@@ -40,7 +40,7 @@ const ProjectCard = ({ project }) => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedImageIndex]);
+  }, [selectedImageIndex, handleNext, handlePrev, closeFullScreen]);
 
   const handleDownload = (e) => {
     e.stopPropagation();
