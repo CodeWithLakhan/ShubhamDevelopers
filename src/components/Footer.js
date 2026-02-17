@@ -56,7 +56,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-accent mt-8 pt-8 text-center text-gray-600 text-sm md:text-base">
-          <p>&copy; {new Date().getFullYear()} <a href="https://lakhanagrawal.vercel.app/">Lakhan Agrawal</a>. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Site Designed & Developed by <a href="https://lakhanagrawal.vercel.app/">Lakhan Agrawal</a>. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
